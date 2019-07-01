@@ -2,33 +2,32 @@ import React, { Component } from "react";
 
 export class AddTodo extends Component {
   state = {
-    title: ""
+    score: 1,
+    score2: 2
   };
 
-  onChange = e => this.setState({ title: e.target.value });
-
-  onSubmit = e => {
-    e.preventDefault();
-    this.props.addTodo(this.state.title);
-    this.setState({ title: "" });
-  };
+  onChange = e => this.setState({ score: this.state.score + 1 });
+  onChange2 = e => this.setState({ score2: this.state.score2 + 1 });
   render() {
     return (
-      <form onSubmit={this.onSubmit} style={{ display: "flex" }}>
-        <input
-          type="text"
-          name="title"
-          placeholder="Add Todo ..."
-          style={{ flex: "10", padding: "5px" }}
-          value={this.state.title}
-          onChange={this.onChange}
-        />
+      <form action="" style={{ display: "flex" }}>
+        <h1>Player 1 score={this.state.score}</h1>
+        <h1>Player 2 score={this.state.score2}</h1>
 
         <input
-          type="submit"
+          type="button"
           value="submit"
           className="btn"
           style={{ flex: "1" }}
+          onClick={this.onChange}
+        />
+
+        <input
+          type="button"
+          value="submit"
+          className="btn"
+          style={{ flex: "1" }}
+          onClick={this.onChange2}
         />
       </form>
     );
