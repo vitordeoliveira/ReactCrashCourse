@@ -17,13 +17,19 @@ export default function Header() {
   return (
     <header style={headerStyle}>
       <h1>TodoList</h1>
-      <Link style={linkStyle} to="/">
-        Home
-      </Link>{" "}
-      |{" "}
-      <Link style={linkStyle} to="/about">
-        About
-      </Link>
+      <small>
+        Using jsonplaceholder> so the ID of the Todos just increment by one,
+        more than one add todo and start to do error
+      </small>
+      <p>
+        <Link style={linkStyle} to="/">
+          Home
+        </Link>{" "}
+        |{" "}
+        <Link style={linkStyle} to="/about">
+          About
+        </Link>
+      </p>
     </header>
   );
 }
