@@ -46,8 +46,12 @@ class App extends Component {
 
   //Add Todo
   addTodo = title => {
+    this.state.todos.map(
+      todo => (todo.id = this.state.todos.indexOf(todo) + 1)
+    );
+    const count = this.state.todos.length;
     const newTodo = {
-      id: 4,
+      id: count + 1,
       title,
       compleded: false
     };
